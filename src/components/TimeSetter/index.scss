@@ -1,0 +1,36 @@
+@import './../../asserts/styles/vars.scss';
+
+.time-setter__form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5em;
+    color: $main-text;
+    border-radius: 1rem;
+
+    &.work {
+        background-color: lighten($accent-first, $amount: 40);
+    }
+
+    &.rest {
+        background-color: lighten($accent-second, $amount: 20);
+    }
+
+    .time-input {
+        width: 3.5em;
+        padding: 0.2rem;
+        margin: 0 0.15rem;
+        border-radius: 0.2rem;
+        background-color: rgba($color: #ffffff, $alpha: 0.5);
+        color: $main-text;
+    }
+
+    .time-input.invalid {
+        background-color: rgba($pomodoro, $alpha: 0.3);
+    }
+}
+
+.incorrect {
+    padding: 0.3em;
+    color: $pomodoro;
+}

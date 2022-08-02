@@ -1,0 +1,18 @@
+@import './../../asserts/styles/vars.scss';
+
+.about {
+    display: none;
+    max-width: 60%;
+    font-size: 13px;
+    font-style: italic;
+
+    @media(min-width: 670px) {
+        display: block;
+    }
+}
+
+.accent {
+    font-size: $l-text;
+    color: $accent-first;
+    font-style: italic;
+}
