@@ -9,7 +9,6 @@ type UseCountdown = (workMS: number, restMS: number) => [
 ];
 
 export const useCountdown: UseCountdown = (workMS, restMS) => {
-    console.log('UseTIMER RUN');
 
     const [timeLeft, setTimeLeft] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
@@ -21,8 +20,6 @@ export const useCountdown: UseCountdown = (workMS, restMS) => {
         if (isRunning) {
             clearInterval(intervalRef.current!);
             setIsRunning(false);
-            console.log('Timer STOP');
-
             return;
         }
 
@@ -58,7 +55,6 @@ export const useCountdown: UseCountdown = (workMS, restMS) => {
         return () => {
             if (intervalRef.current) clearInterval(intervalRef.current);
             setIsRunning(false);
-            console.log('Timer CLEANED');
         }
     }, [workMS, restMS])
 
@@ -67,7 +63,7 @@ export const useCountdown: UseCountdown = (workMS, restMS) => {
     return [min, sec, toggleTimer, resetTimer, currentPeriod];
 }
 
-function calculateTime(ms: number) {
+function calculateTime(ms: number): [number, number] {
     const min = Math.floor(ms / (1000 * 60));
     const sec = Math.floor((ms % (1000 * 60)) / 1000);
     return [min, sec];
