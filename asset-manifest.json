@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Pomodoro-Tracker/static/css/main.1f7f9356.css",
+    "main.js": "/Pomodoro-Tracker/static/js/main.02504dbf.js",
+    "static/media/centurygothic.svg": "/Pomodoro-Tracker/static/media/centurygothic.8ee995bd5a61fc08449d.svg",
+    "static/media/centurygothic.eot": "/Pomodoro-Tracker/static/media/centurygothic.589d7ad868ae542d0741.eot",
+    "static/media/centurygothic.ttf": "/Pomodoro-Tracker/static/media/centurygothic.88e911240744d3137e14.ttf",
+    "static/media/centurygothic.woff": "/Pomodoro-Tracker/static/media/centurygothic.80b2d90d5a60d8ac75d8.woff",
+    "static/media/centurygothic.woff2": "/Pomodoro-Tracker/static/media/centurygothic.245a3afaf766d83a66b3.woff2",
+    "index.html": "/Pomodoro-Tracker/index.html",
+    "static/media/timer.svg": "/Pomodoro-Tracker/static/media/timer.ce6968406ac97bf4e68eb89d992d0d0a.svg",
+    "static/media/logo.svg": "/Pomodoro-Tracker/static/media/logo.b16a7eb36c3110c23966fdd1746af4e5.svg",
+    "static/media/star.svg": "/Pomodoro-Tracker/static/media/star.60a27ebefe3a8e200745.svg",
+    "main.1f7f9356.css.map": "/Pomodoro-Tracker/static/css/main.1f7f9356.css.map",
+    "main.02504dbf.js.map": "/Pomodoro-Tracker/static/js/main.02504dbf.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1f7f9356.css",
+    "static/js/main.02504dbf.js"
+  ]
+}
