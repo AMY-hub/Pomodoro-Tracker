@@ -5,4 +5,8 @@ body {
     background-color: $background;
     font-family: $main-font, Arial, Helvetica, sans-serif;
     font-size: $m-text;
+
+    @media(min-width: 670px) {
+        font-size: 1.1rem;
+    }
 }

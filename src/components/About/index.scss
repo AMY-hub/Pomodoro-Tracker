@@ -3,16 +3,10 @@
 .about {
     display: none;
     max-width: 60%;
-    font-size: 13px;
+    font-size: 0.8rem;
     font-style: italic;
 
     @media(min-width: 670px) {
         display: block;
     }
-}
-
-.accent {
-    font-size: $l-text;
-    color: $accent-first;
-    font-style: italic;
 }
