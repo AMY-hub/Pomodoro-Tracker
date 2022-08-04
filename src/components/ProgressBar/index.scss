@@ -1,0 +1,39 @@
+@import './../../asserts/styles/vars.scss';
+
+.progress {
+    position: relative;
+}
+
+.progress-bar {
+    transform: rotate(-90deg);
+    width: 300px;
+    height: 300px;
+}
+
+.children {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+// .progress__track {
+//     stroke: #ecf6cb;
+// }
+
+// .progress__indicator {
+//     stroke: $progress;
+//     stroke-dasharray: 251.2px;
+//     stroke-dashoffset: 188.4px;
+// }
+
+// .progress__track,.progress__indicator {
+//     cx: 50px;
+//     cy: 50px;
+//     r: 40px;
+//     fill: transparent;
+//     stroke-width: 10px;
+//     stroke-linecap: round;
+// }
+

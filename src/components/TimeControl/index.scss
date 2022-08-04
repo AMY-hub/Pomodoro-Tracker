@@ -1,5 +1,13 @@
 @import './../../asserts/styles/vars.scss';
 
+.time-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
 .time {
     display: inline-block;
     font-size: 2.5em;

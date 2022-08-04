@@ -1,14 +1,17 @@
 import { useEffect, useRef, useState } from "react";
 
-type UseCountdown = (workMS: number, restMS: number) => [
-    min: number,
-    sec: number,
-    toggleTimer: () => void,
-    resetTimer: () => void,
-    currentPeriod: 'work' | 'rest',
-];
+type UseCountdown = (
+    workMS: number,
+    restMS: number,
+    notification?: HTMLAudioElement) => [
+        timeLeft: number,
+        toggleTimer: () => void,
+        resetTimer: () => void,
+        currentPeriod: 'work' | 'rest',
+        isRUnning: boolean
+    ];
 
-export const useCountdown: UseCountdown = (workMS, restMS) => {
+export const useCountdown: UseCountdown = (workMS, restMS, notification) => {
 
     const [timeLeft, setTimeLeft] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
@@ -36,6 +39,7 @@ export const useCountdown: UseCountdown = (workMS, restMS) => {
                         setIsRunning(false);
                         clearInterval(intervalRef.current!);
                         setCurrentPeriod(currentPeriod === 'work' ? 'rest' : 'work');
+                        notification?.play();
                         return currentPeriod === 'work' ? restMS : workMS;
                     }
                 })
@@ -58,13 +62,5 @@ export const useCountdown: UseCountdown = (workMS, restMS) => {
         }
     }, [workMS, restMS])
 
-    const [min, sec] = calculateTime(timeLeft);
-
-    return [min, sec, toggleTimer, resetTimer, currentPeriod];
-}
-
-function calculateTime(ms: number): [number, number] {
-    const min = Math.floor(ms / (1000 * 60));
-    const sec = Math.floor((ms % (1000 * 60)) / 1000);
-    return [min, sec];
+    return [timeLeft, toggleTimer, resetTimer, currentPeriod, isRunning];
 }

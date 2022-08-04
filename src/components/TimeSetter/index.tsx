@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { ReactComponent as Arrow } from '../../asserts/Icons/arrow.svg';
 
 import './index.scss';
 
@@ -10,37 +10,40 @@ interface ITimeSetterProps {
 
 export const TimeSettter: React.FC<ITimeSetterProps> = ({ name, timeParam, setTimeParam }) => {
 
-    const [invalidTime, setInvalidTime] = useState(false);
-
-    const handleTimesetting = (time: number) => {
-        if (!time || time < 0 || time > 1800) {
-            setInvalidTime(true);
-            return;
-        } else {
-            setInvalidTime(false);
-            setTimeParam(time);
+    const handleTimesetting = (param: 'increase' | 'decrease') => {
+        if (param === 'increase') {
+            setTimeParam(prev => prev > 240 ? prev : prev + 1);
+        }
+        if (param === 'decrease') {
+            setTimeParam(prev => prev > 1 ? prev - 1 : prev);
         }
     }
 
     return (
-        <div className={'time-setter'}>
-            <form className={`time-setter__form ${name === 'Work' ? 'work' : 'rest'}`}
-            >
-                <label htmlFor="time">{`${name} time:`}</label>
-                <input
-                    type='number'
-                    id='time'
-                    value={timeParam}
-                    onChange={(e) => handleTimesetting(parseInt(e.target.value))}
-                    step={1}
-                    min={0}
-                    max={1800}
-                    className={invalidTime ? 'time-input invalid' : 'time-input'}
-                />
-                <span>min</span>
-            </form>
-            {invalidTime &&
-                <span className='incorrect'>Incorrect data!</span>}
+        <div className={`time-setter ${name === 'Work' ? 'work' : 'rest'}`}>
+            <span>{`${name} time:`}</span>
+            <div className='time__field'>
+                {timeParam}
+                <span className='time-setter__btns'>
+                    <button
+                        className='time-setter__btn'
+                        onClick={() => handleTimesetting('increase')}
+                    >
+                        <Arrow
+                            title='increase'
+                            className='increase-arr' />
+                    </button>
+                    <button
+                        className='time-setter__btn'
+                        onClick={() => handleTimesetting('decrease')}>
+                        <Arrow
+                            title='decrease'
+                            className='decrease-arr' />
+                    </button>
+                </span>
+            </div>
+
+            <span>min</span>
         </div>
 
     )

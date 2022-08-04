@@ -35,7 +35,7 @@
 
 .time-panel {
     position: absolute;
-    top: 45%;
+    top: 37%;
     left: 50%;
     transform: translate(-50%, -20%);
     display: flex;
@@ -44,8 +44,12 @@
     justify-content: center;
     gap: 0.5em;
 
+    @media(min-width: 362px) {
+        top: 39%;
+    }
+
     @media(min-width: 670px) {
-        top: 40%;
+        top: 34%;
         gap: 0.7em
     }
 }
