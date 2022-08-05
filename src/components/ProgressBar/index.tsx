@@ -28,8 +28,6 @@ export const ProgressBar: React.FC<IProgressBarProps> = (props) => {
     const dashArray = 2 * radius * Math.PI;
     const dashOffSet = dashArray * ((100 - progress) / 100);
 
-
-
     return (
         <div className='progress'>
             <svg className='progress-bar'
@@ -57,6 +55,5 @@ export const ProgressBar: React.FC<IProgressBarProps> = (props) => {
                 {props.children}
             </div>
         </div>
-
     )
 }

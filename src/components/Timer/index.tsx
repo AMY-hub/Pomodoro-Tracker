@@ -36,8 +36,6 @@ export const Timer: React.FC<ITimerProps> = ({ workTime, restTime, setDatesRate,
     ] = useCountdown(workTimeMS, restTimeMS, notification);
 
     const [min, sec] = calculateTime(timeLeft);
-    console.log(window.innerWidth);
-
 
     useEffect(() => {
         if (currentPeriod === 'rest') {
@@ -54,7 +52,6 @@ export const Timer: React.FC<ITimerProps> = ({ workTime, restTime, setDatesRate,
         <section className="timer">
             <div className="timer__face">
                 <img src={timer} alt="pomodoro-timer" className='timer__img' />
-
                 <div className="time-panel">
                     <ProgressBar
                         progress={currentPeriod === 'work' ?
@@ -63,7 +60,7 @@ export const Timer: React.FC<ITimerProps> = ({ workTime, restTime, setDatesRate,
                         shape='round'
                         size={window.innerWidth > 550 ? 250 : 215}
                         trackColor='#FF856A'
-                        indicatorColor={currentPeriod === 'work' ? '#FFAF66' : '#99AF7C'}
+                        indicatorColor={currentPeriod === 'work' ? '#ffc257' : '#99AF7C'}
                         indicatorWidth={10}
                         trackWidth={10}
                     >
@@ -74,15 +71,12 @@ export const Timer: React.FC<ITimerProps> = ({ workTime, restTime, setDatesRate,
                             resetTimer={resetTimer}
                             isRunning={isRunning} />
                     </ProgressBar>
-
-
                 </div>
             </div>
             {currentPeriod === 'rest' &&
                 <p className="timer__warning hidden">
                     It’s time to take a break!</p>
             }
-
         </section>
     )
 }
