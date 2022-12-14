@@ -27,16 +27,20 @@ export const TimeSettter: React.FC<ITimeSetterProps> = ({ name, timeParam, setTi
                 <span className='time-setter__btns'>
                     <button
                         className='time-setter__btn'
+                        aria-label='Increase time by one minute'
                         onClick={() => handleTimesetting('increase')}
                     >
                         <Arrow
+                            aria-hidden={true}
                             title='increase'
                             className='increase-arr' />
                     </button>
                     <button
                         className='time-setter__btn'
+                        aria-label='Decrease time by one minute'
                         onClick={() => handleTimesetting('decrease')}>
                         <Arrow
+                            aria-hidden={true}
                             title='decrease'
                             className='decrease-arr' />
                     </button>

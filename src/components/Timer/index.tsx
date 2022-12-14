@@ -46,7 +46,7 @@ export const Timer: React.FC<ITimerProps> = ({ workTime, restTime, setDatesRate,
                 }
             })
         }
-    }, [currentPeriod]);
+    }, [currentPeriod, setDatesRate, today, workTime]);
 
     return (
         <section className="timer">
